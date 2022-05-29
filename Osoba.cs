@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NET_ININ4_PR1._2_z4
 {
-    class Osoba : INotifyPropertyChanged
+    public class Osoba : INotifyPropertyChanged
     {
         static private readonly Dictionary<string, string[]> powiązaneWłaściwości
             = new Dictionary<string, string[]>()
@@ -96,7 +96,7 @@ namespace NET_ININ4_PR1._2_z4
                     koniec = (DateTime)dataŚmierci;
 
                 TimeSpan czasŻycia = koniec - (DateTime)dataUrodzenia;
-                return Math.Ceiling(czasŻycia.Days / 365.25).ToString();
+                return Math.Floor(czasŻycia.Days / 365.25).ToString();
             }
         }
         public override string ToString()

@@ -27,5 +27,17 @@ namespace NET_ININ4_PR1._2_z4
             //model ~ (Model)DataContext
             InitializeComponent();
         }
+
+        private void SzczegółyOsoby(object sender, RoutedEventArgs e)
+        {
+            ListBox lista = (ListBox)FindName("ListaOsób");
+            Osoba osoba = (Osoba)lista.SelectedItem;
+            new OknoSzczegółów(osoba).Show();
+        }
+
+        private void NowaOsoba(object sender, RoutedEventArgs e)
+        {
+            new OknoSzczegółów(model.NowaOsoba()).Show();
+        }
     }
 }
