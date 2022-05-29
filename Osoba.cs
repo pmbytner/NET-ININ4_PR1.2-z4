@@ -31,9 +31,10 @@ namespace NET_ININ4_PR1._2_z4
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(właściwość));
             załatwioneWłaściwości.Add(właściwość);
-            foreach (string powiązanaWłaściwość in powiązaneWłaściwości[właściwość])
-                if (!załatwioneWłaściwości.Contains(powiązanaWłaściwość))
-                    OnPropertyChanged(powiązanaWłaściwość, załatwioneWłaściwości);
+            if(powiązaneWłaściwości.ContainsKey(właściwość))
+                foreach (string powiązanaWłaściwość in powiązaneWłaściwości[właściwość])
+                    if (!załatwioneWłaściwości.Contains(powiązanaWłaściwość))
+                        OnPropertyChanged(powiązanaWłaściwość, załatwioneWłaściwości);
         }
 
         string

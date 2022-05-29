@@ -9,6 +9,9 @@ namespace NET_ININ4_PR1._2_z4
 {
     class Model
     {
-        public ObservableCollection<Osoba> ListaOsób { get; } = new ObservableCollection<Osoba>();
+        public ObservableCollection<Osoba> ListaOsób { get; } = new ObservableCollection<Osoba>() { 
+            new Osoba() {Imię="Jan", Nazwisko="Wiśniewski"},
+            new Osoba() {Imię="Wojciech", Nazwisko="Jabłoński"},
+        };
     }
 }
